@@ -1,0 +1,7 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background-color: #fff;
+  color: #222;
+}

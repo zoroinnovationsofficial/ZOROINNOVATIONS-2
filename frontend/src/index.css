@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.hero-gradient, .custom-hero-gradient {
+  background: linear-gradient(104.9deg, #1E3A8A 0%, #3B82F6 50%, #FF6B35 100%);
+}
+
+.cta-gradient {
+  background: linear-gradient(90deg, #FF6B35 0%, #EA580C 100%);
+}
+
+.footer-bg {
+  background-color: #111827;
+}
