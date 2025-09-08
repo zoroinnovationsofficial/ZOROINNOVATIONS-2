@@ -26,7 +26,6 @@ router
   .post(
     employeeIdVerifyValidator(),
     validate,
-    authMiddleware,
     checkAdminRole,
     employeeVerificationController,
   );
@@ -82,3 +81,4 @@ router
     changeEmployeeStatus,
   );
 export default router;
+
