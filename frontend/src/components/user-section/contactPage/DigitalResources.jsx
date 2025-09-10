@@ -47,7 +47,7 @@ const DigitalResources = () => {
   return (
     <section className="digital-resources">
       <div className="container">
-        <div className="header">
+        <div className="header text-white">
           <h2>Digital Resources</h2>
           <p>
             Explore our latest insights, guides, and tools to help you make
