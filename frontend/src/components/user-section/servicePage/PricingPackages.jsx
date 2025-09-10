@@ -60,11 +60,7 @@ export default function PricingPackages() {
                 : "border-transparent hover:border-orange-500"
             } rounded-3xl shadow-md p-8 flex flex-col items-center min-h-[460px] transform hover:scale-105 transition-all duration-300 w-full max-w-sm`}
           >
-            {pkg.highlight && (
-              <div className="absolute -top-3 right-4 bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow">
-                Most Popular
-              </div>
-            )}
+            {/* ... (rest of the card content) */}
             <div className="font-bold text-2xl mb-2">{pkg.title}</div>
             <div className="text-3xl font-bold text-orange-500 mb-2">
               {pkg.price}
@@ -85,17 +81,16 @@ export default function PricingPackages() {
                 </li>
               ))}
             </ul>
-
-            <button
+            <a
               href="/contact"
-              className={`px-6 py-2 w-full rounded-md font-semibold transition-colors duration-300 ${
+              className={`text-center px-6 py-2 w-full rounded-md font-semibold transition-colors duration-300 ${
                 pkg.highlight
                   ? "bg-orange-300 hover:bg-orange-600 text-black"
                   : "bg-gray-300 hover:bg-orange-600 text-black"
               }`}
             >
               {pkg.cta}
-            </button>
+            </a>
           </div>
         ))}
       </div>
