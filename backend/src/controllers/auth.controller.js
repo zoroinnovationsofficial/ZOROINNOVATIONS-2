@@ -682,7 +682,7 @@ const refreshAccessToken = async (req, res) => {
 
     sameSite: 'strict',
 
-    maxAge: 24 * 60 * 60 * 1000, // 1 day
+    maxAge: 30 * 60 * 1000, // 1 day
 
   };
 
@@ -1013,3 +1013,4 @@ export {
   verifyEmail,
 
 };
+
