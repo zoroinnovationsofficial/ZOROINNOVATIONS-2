@@ -43,7 +43,7 @@ export default function AiApplications() {
           className="flex justify-center"
         >
           <img
-            src="/Serviceimages/ai-illustration.svg"
+            src="/Serviceimages/AI Applications.png"
             alt="AI Applications"
             className="rounded-2xl shadow-lg max-w-full h-auto"
           />
