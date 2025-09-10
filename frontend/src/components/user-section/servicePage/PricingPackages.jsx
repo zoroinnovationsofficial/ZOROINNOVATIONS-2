@@ -87,7 +87,7 @@ export default function PricingPackages() {
             </ul>
 
             <button
-              href=""
+              href="/contact"
               className={`px-6 py-2 w-full rounded-md font-semibold transition-colors duration-300 ${
                 pkg.highlight
                   ? "bg-orange-300 hover:bg-orange-600 text-black"
