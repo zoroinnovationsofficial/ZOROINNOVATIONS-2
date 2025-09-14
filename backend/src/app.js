@@ -25,7 +25,7 @@ const app = express();
 const allowedOrigins = [
   process.env.CLIENT_URL, // Your main production URL
   // Regex to match ANY preview URL in your new 'zoroinnovations-projects' scope
-  /^https:\/\/.*-zoroinnovations-projects\.vercel\.app$/,
+  /^https:\/\/zoroinnovation-3-.*\.vercel\.app$/,
   'http://localhost:5173', // For local development
 ];
 
@@ -76,5 +76,6 @@ app.use('/api/team-members', teamMemberRoutes);
 app.use('/api/admin/team-members', adminTeamMemberRoutes);
 
 app.use('/api/v1/employee', employeeRoutes);
+
 
 export default app;
