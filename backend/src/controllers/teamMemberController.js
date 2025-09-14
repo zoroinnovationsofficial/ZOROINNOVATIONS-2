@@ -95,7 +95,7 @@ export const createMember = async (req, res) => {
       });
     }
 
-    const newMember = new TeamMember({ name, role, profileImage:image, ...rest });
+    const newMember = new TeamMember({ name, role, imageUrl:image, ...rest });
     const saved = await newMember.save();
 
     if (!saved) {
@@ -190,4 +190,5 @@ export const deleteMember = async (req, res) => {
     });
   }
 };
+
 
