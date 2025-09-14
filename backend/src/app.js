@@ -22,39 +22,15 @@ const app = express();
 
 // --- START: Updated CORS Configuration ---
 
-const allowedOrigins = [
-  process.env.CLIENT_URL, // Your main production URL
-  // Regex to match ANY preview URL in your new 'zoroinnovations-projects' scope
-  /^https:\/\/zoroinnovation-3-.*\.vercel\.app$/,
-  'http://localhost:5173', // For local development
-];
+app.use(
+  cors({
+    origin:process.env.CLIENT_URL,
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
+  }),
+);
 
-const corsOptions = {
-  credentials: true,
-  origin: (origin, callback) => {
-    // Allow requests with no origin (like mobile apps or curl requests)
-    if (!origin) {
-      return callback(null, true);
-    }
-    
-    // Check if the origin is in our allowed list
-    const isAllowed = allowedOrigins.some(allowed => {
-      if (typeof allowed === 'string') return allowed === origin;
-      if (allowed instanceof RegExp) return allowed.test(origin);
-      return false;
-    });
-
-    if (isAllowed) {
-      // Origin is allowed
-      callback(null, true);
-    } else {
-      // Origin is not allowed
-      callback(new Error('Not allowed by CORS'));
-    }
-  },
-};
-
-app.use(cors(corsOptions));
 
 // --- END: Updated CORS Configuration ---
 
@@ -79,3 +55,4 @@ app.use('/api/v1/employee', employeeRoutes);
 
 
 export default app;
+
