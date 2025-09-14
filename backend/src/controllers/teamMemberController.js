@@ -95,7 +95,7 @@ export const createMember = async (req, res) => {
       });
     }
 
-    const newMember = new TeamMember({ name, role, imageUrl:image, ...rest });
+    const newMember = new TeamMember({ name, role, imageUrl:image || 'https://res.cloudinary.com/dkgwsfjjc/image/upload/v1757627784/Zoroinnovations/img5.png', ...rest });
     const saved = await newMember.save();
 
     if (!saved) {
@@ -190,5 +190,6 @@ export const deleteMember = async (req, res) => {
     });
   }
 };
+
 
 
