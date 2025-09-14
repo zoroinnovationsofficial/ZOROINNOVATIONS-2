@@ -95,7 +95,7 @@ export const createMember = async (req, res) => {
       });
     }
 
-    const newMember = new TeamMember({ name, role, image, ...rest });
+    const newMember = new TeamMember({ name, role, profileImage:image, ...rest });
     const saved = await newMember.save();
 
     if (!saved) {
@@ -107,7 +107,7 @@ export const createMember = async (req, res) => {
 
     res.status(201).json({
       success: true,
-      data: saved,
+      data: newMember,
       message: 'Team member created successfully',
     });
   } catch (error) {
@@ -190,3 +190,4 @@ export const deleteMember = async (req, res) => {
     });
   }
 };
+
