@@ -319,15 +319,11 @@ const loginUser = async (req, res) => {
 
 
     const cookieOptions = {
-
-      httpOnly: true,
-
-      secure: true,
-
-      sameSite: 'none',
-      path:'/',
-
-    };
+  httpOnly: true,
+  secure: process.env.NODE_ENV === 'production', // Use secure cookies in production
+  sameSite: 'strict', // CHANGED from 'none' for better security
+  path: '/',
+};
 
 
 
@@ -1015,5 +1011,6 @@ export {
   verifyEmail,
 
 };
+
 
 
