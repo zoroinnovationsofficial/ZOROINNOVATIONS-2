@@ -324,7 +324,8 @@ const loginUser = async (req, res) => {
 
       secure: true,
 
-      sameSite: 'strict',
+      sameSite: 'none',
+      path:'/',
 
     };
 
@@ -420,7 +421,8 @@ const logoutUser = async (req, res) => {
 
       secure: true,
 
-      sameSite: 'strict',
+      sameSite: 'none',
+      path:'/',
 
     };
 
@@ -1013,4 +1015,5 @@ export {
   verifyEmail,
 
 };
+
 
